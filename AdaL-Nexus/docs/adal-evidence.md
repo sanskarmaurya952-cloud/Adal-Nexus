@@ -1,0 +1,17 @@
+# AdaL usage evidence
+
+PRD Test G requires genuine evidence of AdaL being used during development.
+This file is a log only. Entries describe work done in AdaL sessions; the team
+adds the actual recordings/screenshots/commit hashes. Nothing here is evidence by itself.
+
+| Date | What AdaL did | Evidence (recording / screenshot / commit) |
+|------|---------------|---------------------------------------------|
+| 2026-10-28 | M6: Real Excel generation (`sheet.write`) and independent verification (`sheet.verify`) using `exceljs`, sandboxed strictly in `output/` with path-traversal prevention. Added secure download route `GET /api/downloads/:fileName`. 14 new automated tests (219/219 passing). Executed full live 5-step workflow in visible Chrome (runId `5a876057-5f68-4a6f-9187-9e28ba2ad3e2`): 10 startups researched, consolidated, exported to `output/m6-accepted-startups.xlsx` (12,033 bytes, 10 data rows, SHA-256 `44496a4bb5a6d89b11f610d91b8af4b6b91c0f5193a23e292b3f306cb3ebab88`), reopened and verified independently, and download route tested. No live Gemini calls. | _to be added by team_ |
+| 2026-10-28 | M5 acceptance check: full repository audit, executed live research pipeline in visible Chrome (runId 23a88565-24e9-4ed2-b3a5-8747024d927f), audited 10 real startup websites (5 search, 5 fallback seeds), verified official domains, evaluated all claims/pricing/billing against evidence quotes, documented audit in `docs/audits/2026-10-28-m5-acceptance-audit.md`. No live Gemini calls, no spreadsheet work. | _to be added by team_ |
+| 2026-10-28 | Read PRD, proposed architecture, scaffolded Milestone 1 (server + web + docs) | _to be added by team_ |
+| 2026-10-28 | M1 browser verification in Chrome; found and fixed a missing-favicon 404 console error (`web/index.html`) | _to be added by team_ |
+| 2026-10-28 | M2: controller, policy, approvals, cancel/pause/resume, 28 tests, UI update; manual browser check of approve/pause/resume/cancel/reject | _to be added by team_ |
+| 2026-10-28 | M5.1 quality audit: re-visited the 10 recorded sites in a visible Chrome window, checked stored quotes live, classified fields (several original errors found), improved plan-tied pricing / claim-only target market / about-page hop / second search query / run persistence, 12 new tests, re-extracted the same 10 sites, and ran one fresh pipeline run. No Gemini calls, no spreadsheet work. Classification is the agent's judgment from quotes, not human-reviewed. | _to be added by team_ |
+| 2026-10-28 | M5: step data-flow references (`$ref`) in the controller/planner, research tools (find_sources with labelled seed-list fallback, collect, consolidate), evidence/ambiguity rules, 46 new mock-based tests, and two live multi-startup runs in a visible Chrome window (both completed; quality limited and not manually audited). No spreadsheet/Excel work; no Gemini calls. | _to be added by team_ |
+| 2026-10-28 | M4: Playwright browser tools (search/open/extract), URL-safety layer, evidence extraction, mocked-browser tests, and manual live checks in a visible Chrome window (blocked localhost, real search, real extraction, DNS failure, HTTP error, cancellation). Full research workflow NOT working yet (no step-to-step data flow). | _to be added by team_ |
+| 2026-10-28 | M3: Gemini provider (mocked-SDK tests), schema-validated planner with review-then-Start flow, config check script, README/.env.example updates. No live Gemini call was made. | _to be added by team_ |

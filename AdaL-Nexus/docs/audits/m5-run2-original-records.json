@@ -1,0 +1,1001 @@
+﻿[
+    {
+        "candidateUrl":  "https://elevenlabs.io/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:07:30.561Z",
+        "name":  {
+                     "value":  "ElevenLabs",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Free AI Voice Generator \u0026 Voice Agents Platform | ElevenLabs",
+                                          "sourceUrl":  "https://elevenlabs.io/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Create lifelike speech with our AI voice generator and voice agents platform. Access 17,500+ voices in 90+ languages with secure APIs and SDKs.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Create lifelike speech with our AI voice generator and voice agents platform. Access 17,500+ voices in 90+ languages with secure APIs and SDKs.",
+                                             "sourceUrl":  "https://elevenlabs.io/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "Unavailable",
+                             "evidence":  [
+
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "Unavailable",
+                        "status":  "ambiguous",
+                        "prices":  [
+                                       "$0 per month",
+                                       "$6",
+                                       "$1 per month",
+                                       "$22",
+                                       "$11 per month",
+                                       "$99 per month",
+                                       "$299 per month",
+                                       "$990 per month",
+                                       "$11",
+                                       "$22 per month",
+                                       "$0.17"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "nAgents ElevenAPI Monthly billing Monthly billing Yearly billing Free $0 per month Build for free Text to Speech Speech to Text Sound Effects Voice Desi",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Image 3 Projects in Studio 10k credits per month Starter Until Nov 1 $6 First month 83% off $1 per month Choose Starter Everything in free, p",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "udio 10k credits per month Starter Until Nov 1 $6 First month 83% off $1 per month Choose Starter Everything in free, plus Commercial License Instant Vo",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "se Dubbing Studio Image \u0026 Video 30k credits per month Creator Popular $22 First month 50% off $11 per month Choose Creator Everything in Starte",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "\u0026 Video 30k credits per month Creator Popular $22 First month 50% off $11 per month Choose Creator Everything in Starter, plus Professional Voice Cloning",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "fessional Voice Cloning Additional Credits 121k credits per month Pro $99 per month Choose Pro Everything in Creator, plus 44.1kHz PCM audio output via A",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "API 192kbps quality audio 600k credits per month For Businesses Scale $299 per month Choose Scale Everything in Pro, plus 3 Workspace seats Team Collabora",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "n 3 Professional Voice Clones 1.8M credits per month 3 seats Business $990 per month Choose Business Everything in Scale, plus Low-latency TTS as low as 5",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "month 50 min 0 9k+ Recommended plan: Creator Creator Recommended Plan $11 $22 per month First month 50% off Pause or cancel anytime 121k credit",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "h 50 min 0 9k+ Recommended plan: Creator Creator Recommended Plan $11 $22 per month First month 50% off Pause or cancel anytime 121k credits, every month",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ps, 44.1kHz 5 ~600 ~$0.17 74 160 1 128 \u0026 192 kbps, 44.1kHz 10 ~1,800 ~$0.17 74 660 3 128 \u0026 192 kbps, 44.1kHz 15 ~6,000 ~$0.17 74 2,200 10 128 \u0026 1",
+                                             "sourceUrl":  "https://elevenlabs.io/pricing"
+                                         }
+                                     ],
+                        "reason":  "promotional or discounted prices appear next to list prices, so the actual price is unclear"
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://elevenlabs.io/",
+                          "role":  "home",
+                          "title":  "Free AI Voice Generator \u0026 Voice Agents Platform | ElevenLabs",
+                          "status":  200
+                      },
+                      {
+                          "url":  "https://elevenlabs.io/pricing",
+                          "role":  "pricing",
+                          "title":  "ElevenLabs Pricing for Creators \u0026 Businesses of All Sizes",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://replicate.com/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:07:40.286Z",
+        "name":  {
+                     "value":  "Replicate",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Replicate - Run AI with an API",
+                                          "sourceUrl":  "https://replicate.com/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Run open-source machine learning models with a cloud API",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Run open-source machine learning models with a cloud API",
+                                             "sourceUrl":  "https://replicate.com/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "Unavailable",
+                             "evidence":  [
+
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "$0.00, $0.01",
+                        "status":  "found",
+                        "prices":  [
+                                       "$0.00",
+                                       "$0.01"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "thing. CPU $0.000100/sec Nvidia T4 GPU $0.000225/sec Nvidia L40S GPU $0.000975/sec 2x Nvidia L40S GPU $0.001950/sec Nvidia A100 (80GB) GPU $0.00",
+                                             "sourceUrl":  "https://replicate.com/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "50/sec Nvidia A100 (80GB) GPU $0.001400/sec 8x Nvidia A100 (80GB) GPU $0.011200/sec Learn more about pricing Pay for what you use Replicate only",
+                                             "sourceUrl":  "https://replicate.com/"
+                                         }
+                                     ]
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://replicate.com/",
+                          "role":  "home",
+                          "title":  "Replicate - Run AI with an API",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://www.perplexity.ai/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:07:45.768Z",
+        "name":  {
+                     "value":  "Perplexity",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Perplexity",
+                                          "sourceUrl":  "https://www.perplexity.ai/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.",
+                                             "sourceUrl":  "https://www.perplexity.ai/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "Unavailable",
+                             "evidence":  [
+
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "Unavailable",
+                        "status":  "unavailable",
+                        "prices":  [
+
+                                   ],
+                        "evidence":  [
+
+                                     ]
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://www.perplexity.ai/",
+                          "role":  "home",
+                          "title":  "Perplexity",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://huggingface.co/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:07:51.451Z",
+        "name":  {
+                     "value":  "Hugging Face",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Hugging Face – The AI community building the future.",
+                                          "sourceUrl":  "https://huggingface.co/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
+                                             "sourceUrl":  "https://huggingface.co/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "Unavailable",
+                             "evidence":  [
+
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "$20/user/month, $0.60/hour",
+                        "status":  "found",
+                        "prices":  [
+                                       "$20/user/month",
+                                       "$0.60/hour"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "y, access controls and dedicated support. Getting started Starting at $20/user/month Single Sign-On Regions Priority Support Audit Logs Resource Groups Pr",
+                                             "sourceUrl":  "https://huggingface.co/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "paces applications to a GPU in a few clicks. View pricing Starting at $0.60/hour for GPU More than 400,000 organizations are using Hugging Face Ai2 En",
+                                             "sourceUrl":  "https://huggingface.co/"
+                                         }
+                                     ]
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://huggingface.co/",
+                          "role":  "home",
+                          "title":  "Hugging Face – The AI community building the future.",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://www.jasper.ai/",
+        "origin":  "fallback",
+        "status":  "ok",
+        "researchedAt":  "2026-10-28T11:08:09.389Z",
+        "name":  {
+                     "value":  "Jasper",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Put AI agents to work for marketing | Jasper",
+                                          "sourceUrl":  "https://www.jasper.ai/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Orchestrate intelligent agents to run end-to-end marketing workflows delivering speed, control, and measurable impact.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Orchestrate intelligent agents to run end-to-end marketing workflows delivering speed, control, and measurable impact.",
+                                             "sourceUrl":  "https://www.jasper.ai/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "marketing teams",
+                             "evidence":  [
+                                              {
+                                                  "kind":  "page_text",
+                                                  "quote":  "tion platform for intelligent marketing Jasper is the agent workspace built for modern marketing teams. With 100+ specialized AI agents and connected content pipelines—stru",
+                                                  "sourceUrl":  "https://www.jasper.ai/"
+                                              }
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "$ 59, $59/month, $69/month",
+                        "status":  "found",
+                        "prices":  [
+                                       "$ 59",
+                                       "$59/month",
+                                       "$69/month"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "designed to meet your needs as you grow Monthly Yearly Save ~20% Pro $ 59 month/ seat Powerful AI to help you stay on-brand, even at scale. Sta",
+                                             "sourceUrl":  "https://www.jasper.ai/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ith additional control, security, team training \u0026 tech support.) Pro: $59/month billed yearly or $69/month billed monthly (cancel anytime). Includes",
+                                             "sourceUrl":  "https://www.jasper.ai/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "urity, team training \u0026 tech support.) Pro: $59/month billed yearly or $69/month billed monthly (cancel anytime). Includes advanced AI features to cre",
+                                             "sourceUrl":  "https://www.jasper.ai/pricing"
+                                         }
+                                     ]
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://www.jasper.ai/",
+                          "role":  "home",
+                          "title":  "Put AI agents to work for marketing | Jasper",
+                          "status":  200
+                      },
+                      {
+                          "url":  "https://www.jasper.ai/pricing",
+                          "role":  "pricing",
+                          "title":  "Plans \u0026 Pricing | Jasper",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://runwayml.com/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:08:23.314Z",
+        "name":  {
+                     "value":  "Runway",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Runway | Intelligent tools for scaling content and teams.",
+                                          "sourceUrl":  "https://runway.com/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Runway is building foundational Real-World Intelligence that is changing how the world’s top brands, companies, agencies and studios are able to tell their stories.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Runway is building foundational Real-World Intelligence that is changing how the world’s top brands, companies, agencies and studios are able to tell their stories.",
+                                             "sourceUrl":  "https://runway.com/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "enterprise, developers",
+                             "evidence":  [
+                                              {
+                                                  "kind":  "page_text",
+                                                  "quote":  "ace. Built for individuals and teams of all sizes. Try now Learn more For Enterprise Used by 60m+ creatives around the world. Try free, cancel anytime. Ru",
+                                                  "sourceUrl":  "https://runway.com/"
+                                              },
+                                              {
+                                                  "kind":  "page_text",
+                                                  "quote":  "the world. Try free, cancel anytime. Runway Dev The AI media platform for developers to build with the best models from Runway and other labs. The API pla",
+                                                  "sourceUrl":  "https://runway.com/"
+                                              }
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "Unavailable",
+                        "status":  "ambiguous",
+                        "prices":  [
+                                       "$0 /month",
+                                       "$36/year",
+                                       "$15",
+                                       "$12 /month",
+                                       "$84/year",
+                                       "$35",
+                                       "$28 /month",
+                                       "$228/year",
+                                       "$95",
+                                       "$76 /month"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ff Free Free forever. For people looking to explore Runway\u0027s AI Tools $0 /month 125 credits 125 one-time credits to explore Runway\u0027s AI tools. Start",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "els to test concepts 5GB asset storage Standard Billed annually. Save $36/year. For curious creators trying AI video $15 $12 /month 625 credits /mo",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Billed annually. Save $36/year. For curious creators trying AI video $15 $12 /month 625 credits /mo 625 credits monthly = 52s of Gen-4.5, 104s",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "led annually. Save $36/year. For curious creators trying AI video $15 $12 /month 625 credits /mo 625 credits monthly = 52s of Gen-4.5, 104s of Gen-4 T",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "0. Gen-4.5 Nano Banana Pro and more Popular Pro Billed annually. Save $84/year. For creators leveling up their craft $35 $28 /month 2250 credits /mo",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Billed annually. Save $84/year. For creators leveling up their craft $35 $28 /month 2250 credits /mo 2250 credits monthly = 187s of Gen-4.5, 3",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "led annually. Save $84/year. For creators leveling up their craft $35 $28 /month 2250 credits /mo 2250 credits monthly = 187s of Gen-4.5, 375s of Gen-",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "and more Best value Max Credits roll over 1 mo. Billed annually. Save $228/year. Best value for heavy solo usage $95 $76 /month 9500 credits /mo 9500",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "mo. Billed annually. Save $228/year. Best value for heavy solo usage $95 $76 /month 9500 credits /mo 9500 credits = 791s of Gen-4.5, 791s of G",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Billed annually. Save $228/year. Best value for heavy solo usage $95 $76 /month 9500 credits /mo 9500 credits = 791s of Gen-4.5, 791s of Gen-4, 1900s",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "rprises Individual Team \u0026 Enterprise API Monthly Yearly -20% off Free Free forever. For people looking to explore Runway\u0027s AI Tools $0 /month 125 credit",
+                                             "sourceUrl":  "https://runway.com/pricing"
+                                         }
+                                     ],
+                        "reason":  "promotional or discounted prices appear next to list prices, so the actual price is unclear"
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://runway.com/",
+                          "role":  "home",
+                          "title":  "Runway | Intelligent tools for scaling content and teams.",
+                          "status":  200
+                      },
+                      {
+                          "url":  "https://runway.com/pricing",
+                          "role":  "pricing",
+                          "title":  "AI Image and Video Pricing from $12/month | Runway AI",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://www.synthesia.io/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:08:40.517Z",
+        "name":  {
+                     "value":  "Synthesia",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Synthesia: #1 AI Video Platform for Business",
+                                          "sourceUrl":  "https://www.synthesia.io/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Official Synthesia site. The AI video platform trusted by 90%+ of the Fortune 100 to communicate, train, and upskill teams in 140+ languages.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Official Synthesia site. The AI video platform trusted by 90%+ of the Fortune 100 to communicate, train, and upskill teams in 140+ languages.",
+                                             "sourceUrl":  "https://www.synthesia.io/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "businesses",
+                             "evidence":  [
+                                              {
+                                                  "kind":  "page_text",
+                                                  "quote":  "your training changes. See the full list of integrations. Is it safe for businesses to create AI videos in Synthesia? Yes. Synthesia is SOC 2 Type II, IS",
+                                                  "sourceUrl":  "https://www.synthesia.io/"
+                                              }
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "Unavailable",
+                        "status":  "ambiguous",
+                        "prices":  [
+                                       "?0 per month",
+                                       "?1,999",
+                                       "?1,499 per month",
+                                       "?17,988",
+                                       "?6,199",
+                                       "?4,649 per month",
+                                       "?55,788",
+                                       "? 2,099",
+                                       "?4,649 /month",
+                                       "?0/mo",
+                                       "?1,499/mo",
+                                       "?17,988/yr"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "O \u0026 SESSIONS API MONTHLY YEARLY Save up to 3 months with yearly Basic ?0 per month 500 CREDITS / MONTH Get started Free allowance Syren NEW Share your c",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "os carry a Synthesia watermark See all features Starter 3 MONTHS FREE ?1,999 ?1,499 per month ?17,988 billed yearly 15,000 CREDITS / YEAR Get star",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "y a Synthesia watermark See all features Starter 3 MONTHS FREE ?1,999 ?1,499 per month ?17,988 billed yearly 15,000 CREDITS / YEAR Get started CREDITS Video",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ermark See all features Starter 3 MONTHS FREE ?1,999 ?1,499 per month ?17,988 billed yearly 15,000 CREDITS / YEAR Get started CREDITS Videoup to~15",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "rs Chat/email support See all features Pro MOST POPULAR 3 MONTHS FREE ?6,199 ?4,649 per month ?55,788 billed yearly 72,000 CREDITS / YEAR Get star",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "/email support See all features Pro MOST POPULAR 3 MONTHS FREE ?6,199 ?4,649 per month ?55,788 billed yearly 72,000 CREDITS / YEAR Get started CREDITS Video",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "e all features Pro MOST POPULAR 3 MONTHS FREE ?6,199 ?4,649 per month ?55,788 billed yearly 72,000 CREDITS / YEAR Get started CREDITS Videoup to~72",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Add learner seats to any plan; no session limits for seated learners. ? 2,099 / learner / month Add learner seats to plan See what plan best fits y",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ifferently. OUR RECOMMENDATION 3 MONTHS FREE Pro 72,000 credits /year ?4,649 /month ?55,788 billed yearly 72,000 credits /year included Everything in Sta",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Starter + more Scale up or down anytime Start Pro Compare plans Basic ?0/mo try for free Get started Starter ?1,499/mo ?17,988/yr, billed yearly",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Start Pro Compare plans Basic ?0/mo try for free Get started Starter ?1,499/mo ?17,988/yr, billed yearly Get started Pro ?4,649/mo ?55,788/yr, bille",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Compare plans Basic ?0/mo try for free Get started Starter ?1,499/mo ?17,988/yr, billed yearly Get started Pro ?4,649/mo ?55,788/yr, billed yearly Ge",
+                                             "sourceUrl":  "https://www.synthesia.io/pricing"
+                                         }
+                                     ],
+                        "reason":  "12 different price points appear on the page (likely several products or unrelated prices)"
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://www.synthesia.io/",
+                          "role":  "home",
+                          "title":  "Synthesia: #1 AI Video Platform for Business",
+                          "status":  200
+                      },
+                      {
+                          "url":  "https://www.synthesia.io/pricing",
+                          "role":  "pricing",
+                          "title":  "Synthesia Pricing - Compare Free and Paid Plans",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://cohere.com/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:08:57.037Z",
+        "name":  {
+                     "value":  "Cohere",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Enterprise AI: Private, Secure, Customizable | Cohere",
+                                          "sourceUrl":  "https://cohere.com/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Cohere builds powerful models and AI solutions enabling enterprises to automate processes, empower employees, and turn fragmented data into actionable insights.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Cohere builds powerful models and AI solutions enabling enterprises to automate processes, empower employees, and turn fragmented data into actionable insights.",
+                                             "sourceUrl":  "https://cohere.com/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "developers",
+                             "evidence":  [
+                                              {
+                                                  "kind":  "page_text",
+                                                  "quote":  "ties Healthcare Life Sciences Manufacturing Insights Customer Stories For Developers Developers Models Overview Docs Discord LLM University Connect Partne",
+                                                  "sourceUrl":  "https://cohere.com/"
+                                              }
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "Unavailable",
+                        "status":  "ambiguous",
+                        "prices":  [
+                                       "$3.00",
+                                       "$2,000",
+                                       "$5.00",
+                                       "$3,250",
+                                       "$7.00",
+                                       "$4,300",
+                                       "$250",
+                                       "$1.00/1M",
+                                       "$2.00/1M",
+                                       "$0.30/1M",
+                                       "$0.60/1M",
+                                       "$0.50/1M"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Hourly rate per instance Monthly rate per instance Embed 5 Fast Small $3.00 $2,000 Embed 5 Fast Medium $5.00 $3,250 Embed 5 Pro Small $3.00 $2,00",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "rate per instance Monthly rate per instance Embed 5 Fast Small $3.00 $2,000 Embed 5 Fast Medium $5.00 $3,250 Embed 5 Pro Small $3.00 $2,000 Embed",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "rate per instance Embed 5 Fast Small $3.00 $2,000 Embed 5 Fast Medium $5.00 $3,250 Embed 5 Pro Small $3.00 $2,000 Embed 5 Pro Medium $5.00 $3,250",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "er instance Embed 5 Fast Small $3.00 $2,000 Embed 5 Fast Medium $5.00 $3,250 Embed 5 Pro Small $3.00 $2,000 Embed 5 Pro Medium $5.00 $3,250 Rerank",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "rank 5 Pro Medium $4.00 $2,500 Parse 5 Medium $4.00 $2,500 Parse 5 XL $7.00 $4,300 Model Vault is our dedicated, fully managed platform to run Co",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Pro Medium $4.00 $2,500 Parse 5 Medium $4.00 $2,500 Parse 5 XL $7.00 $4,300 Model Vault is our dedicated, fully managed platform to run Cohere mo",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "l will be issued at the end of every calendar month or when you reach $250 in outstanding balances. The endpoint I’m using is billed by token. W",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ing for our legacy models? For existing customers: Command pricing is $1.00/1M tokens for input and $2.00/1M tokens for output Command-light pricing",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "existing customers: Command pricing is $1.00/1M tokens for input and $2.00/1M tokens for output Command-light pricing is $0.30/1M tokens for input",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ens for input and $2.00/1M tokens for output Command-light pricing is $0.30/1M tokens for input and $0.60/1M tokens for output Command R 03-2024 pri",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ens for output Command-light pricing is $0.30/1M tokens for input and $0.60/1M tokens for output Command R 03-2024 pricing is $0.50/1M tokens for in",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "for input and $0.60/1M tokens for output Command R 03-2024 pricing is $0.50/1M tokens for input and $1.50/1M tokens for output Command R+ 04-2024 pr",
+                                             "sourceUrl":  "https://cohere.com/pricing"
+                                         }
+                                     ],
+                        "reason":  "12 different price points appear on the page (likely several products or unrelated prices)"
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://cohere.com/",
+                          "role":  "home",
+                          "title":  "Enterprise AI: Private, Secure, Customizable | Cohere",
+                          "status":  200
+                      },
+                      {
+                          "url":  "https://cohere.com/pricing",
+                          "role":  "pricing",
+                          "title":  "Pricing | Secure and Scalable Enterprise AI | Cohere",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://mistral.ai/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:09:09.479Z",
+        "name":  {
+                     "value":  "Mistral",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "Mistral | #1 in Sovereign AI: Frontier Open Models You Own",
+                                          "sourceUrl":  "https://mistral.ai/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Frontier open-weight models you own and control. Customize with Forge, deploy with Studio, run on-prem, your VPC, or our cloud.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Frontier open-weight models you own and control. Customize with Forge, deploy with Studio, run on-prem, your VPC, or our cloud.",
+                                             "sourceUrl":  "https://mistral.ai/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "Unavailable",
+                             "evidence":  [
+
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "Unavailable",
+                        "status":  "ambiguous",
+                        "prices":  [
+                                       "$14.99 /mo",
+                                       "$25.5 /mo",
+                                       "$15 /mo",
+                                       "$24.99 /user/mo",
+                                       "$50 /mo",
+                                       "$0.5",
+                                       "$1.5",
+                                       "$5.99 / month",
+                                       "$14.99"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "n plan Full access to Vibe for all-day coding and long-running tasks. $14.99 /mo Excluding taxes I\u0027m a student More access and usage. More messages an",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "enerate spreadsheets and slides. Better image generation and editing. $25.5 /mo in API credits. Chat and email support. More access and usage. More m",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "e. All-day coding in the CLI, IDE, or on web. More image generations. $15 /mo in API credits. Chat and email support. Start now Team Secure, collab",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "now Team Secure, collaborative workspace for teams building with AI. $24.99 /user/mo Excluding taxes Even higher limits. Even faster responses. Up to 30GB",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  ". Up to 30GB of storage /user. Domain name verification. Data export. $50 /mo Users Start now Enterprise Private deployments powered by custom mode",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "tput (responses) counted separately. For example, Mistral Large costs $0.5 /M tokens in and $1.5 /M tokens out. Batch processing, for high-volum",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ed separately. For example, Mistral Large costs $0.5 /M tokens in and $1.5 /M tokens out. Batch processing, for high-volume work, reduces the pr",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ere discounts for students? Verified students can get Mistral Pro for $5.99 / month (normally $14.99). Do you offer enterprise solutions and support? Yes",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ts? Verified students can get Mistral Pro for $5.99 / month (normally $14.99). Do you offer enterprise solutions and support? Yes, the Mistral Ent",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "hat and email support Frequently asked questions. Does Mistral have a free plan? Yes, Mistral’s Free plan provides limited access to Vibe, including",
+                                             "sourceUrl":  "https://mistral.ai/pricing/"
+                                         }
+                                     ],
+                        "reason":  "9 different price points appear on the page (likely several products or unrelated prices)"
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://mistral.ai/",
+                          "role":  "home",
+                          "title":  "Mistral | #1 in Sovereign AI: Frontier Open Models You Own",
+                          "status":  200
+                      },
+                      {
+                          "url":  "https://mistral.ai/pricing/",
+                          "role":  "pricing",
+                          "title":  "Pricing | Mistral",
+                          "status":  200
+                      }
+                  ]
+    },
+    {
+        "candidateUrl":  "https://www.pinecone.io/",
+        "origin":  "fallback",
+        "status":  "partial",
+        "researchedAt":  "2026-10-28T11:09:22.678Z",
+        "name":  {
+                     "value":  "Pinecone",
+                     "evidence":  [
+                                      {
+                                          "kind":  "title",
+                                          "quote":  "The trusted AI knowledge company | Pinecone",
+                                          "sourceUrl":  "https://www.pinecone.io/"
+                                      }
+                                  ]
+                 },
+        "product":  {
+                        "value":  "Pinecone is the trusted AI knowledge company. Its AI knowledge platform—Database, Nexus, and Marketplace—powers accurate, fast, cost-effective AI for 10,000+ customers and 1M developers worldwide.",
+                        "evidence":  [
+                                         {
+                                             "kind":  "meta",
+                                             "quote":  "Pinecone is the trusted AI knowledge company. Its AI knowledge platform—Database, Nexus, and Marketplace—powers accurate, fast, cost-effective AI for 10,000+ customers and 1M developers worldwide.",
+                                             "sourceUrl":  "https://www.pinecone.io/"
+                                         }
+                                     ]
+                    },
+        "targetMarket":  {
+                             "value":  "Unavailable",
+                             "evidence":  [
+
+                                          ]
+                         },
+        "pricing":  {
+                        "value":  "Unavailable",
+                        "status":  "ambiguous",
+                        "prices":  [
+                                       "$20/month",
+                                       "$50/month",
+                                       "$300",
+                                       "$500/month",
+                                       "$50",
+                                       "$0.33",
+                                       "$4",
+                                       "$4.50 per million",
+                                       "$6",
+                                       "$6.75 per million",
+                                       "$16",
+                                       "$18 per million"
+                                   ],
+                        "evidence":  [
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "orkloads Builder NEW For solo developers and small teams. Get Started $20/month flat Everything in Starter Increased usage limits Choose your cloud a",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "rd POPULAR For production applications at any scale. Start Free Trial $50/month min. usage You\u0027ll be charged a minimum of $50/month. Once your usage",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "sage exceeds this amount, you\u0027ll pay as you go. 3 week trial includes $300 credits Everything in Builder Pay-as-you-go for Database On-Demand, I",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "r mission-critical production applications. Get Started Request Trial $500/month min. usage You\u0027ll be charged a minimum of $500/month. Once your usage",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "to dedicated engineering resources. View Pricing Usage-based pricing $50 monthly minimum that\u0027s applied to your usage. Anything over $50 is bi",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Pricing Dimensions Database Storage Up to 2 GB Up to 10 GB Unlimited $0.33/GB/mo Unlimited $0.33/GB/mo Write Units Up to 2M/mo Up to 5M/mo Unlim",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "o Unlimited $0.33/GB/mo Write Units Up to 2M/mo Up to 5M/mo Unlimited $4-$4.50 per million (varies by cloud and region) Unlimited $6-$6.75 per",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "nlimited $0.33/GB/mo Write Units Up to 2M/mo Up to 5M/mo Unlimited $4-$4.50 per million (varies by cloud and region) Unlimited $6-$6.75 per million (varies b",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "Unlimited $4-$4.50 per million (varies by cloud and region) Unlimited $6-$6.75 per million (varies by cloud and region) Read Units Up to 1M/mo",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "imited $4-$4.50 per million (varies by cloud and region) Unlimited $6-$6.75 per million (varies by cloud and region) Read Units Up to 1M/mo Up to 2M/mo Unlim",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "ies by cloud and region) Read Units Up to 1M/mo Up to 2M/mo Unlimited $16-$18 per million (varies by cloud and region) Unlimited $24-$27 per mi",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         },
+                                         {
+                                             "kind":  "page_text",
+                                             "quote":  "by cloud and region) Read Units Up to 1M/mo Up to 2M/mo Unlimited $16-$18 per million (varies by cloud and region) Unlimited $24-$27 per million (varies by",
+                                             "sourceUrl":  "https://www.pinecone.io/pricing/"
+                                         }
+                                     ],
+                        "reason":  "12 different price points appear on the page (likely several products or unrelated prices)"
+                    },
+        "pages":  [
+                      {
+                          "url":  "https://www.pinecone.io/",
+                          "role":  "home",
+                          "title":  "The trusted AI knowledge company | Pinecone",
+                          "status":  200
+                      },
+                      {
+                          "url":  "https://www.pinecone.io/pricing/",
+                          "role":  "pricing",
+                          "title":  "Pricing | Pinecone",
+                          "status":  200
+                      }
+                  ]
+    }
+]
