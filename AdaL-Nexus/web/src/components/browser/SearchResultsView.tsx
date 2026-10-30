@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DuckDuckGoIcon, GlobeIcon, RefreshIcon, SearchIcon } from "../Icons";
+import { getApiUrl } from "../../api";
 
 interface SearchResult {
   title: string;
@@ -33,7 +34,7 @@ export function SearchResultsView({ query, onNavigate }: SearchResultsViewProps)
     setLoading(true);
     setError(null);
 
-    fetch(`/api/browser/search?q=${encodeURIComponent(query.trim())}`)
+    fetch(getApiUrl(`/api/browser/search?q=${encodeURIComponent(query.trim())}`))
       .then((res) => {
         if (!res.ok) throw new Error(`Search failed: HTTP ${res.status}`);
         return res.json();
@@ -70,7 +71,7 @@ export function SearchResultsView({ query, onNavigate }: SearchResultsViewProps)
   const handleLaunchDesktop = async () => {
     setLaunchingDesktop(true);
     try {
-      await fetch("/api/desktop/launch", { method: "POST" });
+      await fetch(getApiUrl("/api/desktop/launch"), { method: "POST" });
     } catch {}
     setTimeout(() => setLaunchingDesktop(false), 3000);
   };

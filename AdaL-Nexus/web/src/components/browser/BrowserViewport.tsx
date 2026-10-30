@@ -3,6 +3,7 @@ import type { Bookmark, BrowserTab, HistoryEntry } from "../../types/browser";
 import { DuckDuckGoIcon, GlobeIcon, HomeIcon, RefreshIcon } from "../Icons";
 import { SearchResultsView } from "./SearchResultsView";
 import { StartPage } from "./StartPage";
+import { getApiUrl } from "../../api";
 
 interface BrowserViewportProps {
   activeTab: BrowserTab | null;
@@ -100,7 +101,7 @@ export function BrowserViewport({
   const handleLaunchDesktop = async () => {
     setLaunchingDesktop(true);
     try {
-      await fetch("/api/desktop/launch", { method: "POST" });
+      await fetch(getApiUrl("/api/desktop/launch"), { method: "POST" });
     } catch {}
     setTimeout(() => setLaunchingDesktop(false), 3000);
   };

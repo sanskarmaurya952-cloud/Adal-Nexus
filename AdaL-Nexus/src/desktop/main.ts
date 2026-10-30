@@ -1,4 +1,5 @@
 import { app, BrowserWindow, ipcMain, session } from "electron";
+import { spawn, type ChildProcess } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -14,6 +15,7 @@ let mainWindow: BrowserWindow | null = null;
 let tabManager: TabManager | null = null;
 let storage: BrowserStorage | null = null;
 let automationBridge: AutomationBridge | null = null;
+let backendProcess: ChildProcess | null = null;
 
 async function checkPort(port: number): Promise<boolean> {
   return new Promise((resolve) => {
@@ -28,6 +30,50 @@ async function checkPort(port: number): Promise<boolean> {
       });
     });
   });
+}
+
+async function ensureBackendServer(): Promise<void> {
+  const isServerActive = await checkPort(3001);
+  if (isServerActive) {
+    console.log("[Desktop] Backend server is already running on port 3001");
+    return;
+  }
+
+  const projectRoot = path.resolve(__dirname, "..");
+  const isWindows = process.platform === "win32";
+  const cmd = isWindows ? "npx.cmd" : "npx";
+
+  console.log("[Desktop] Auto-starting backend server on port 3001...");
+  try {
+    backendProcess = spawn(cmd, ["tsx", "src/server/index.ts"], {
+      cwd: projectRoot,
+      stdio: "inherit",
+      shell: isWindows,
+      env: { ...process.env },
+    });
+
+    backendProcess.on("error", (err) => {
+      console.error("[Desktop] Failed to spawn backend process:", err);
+    });
+
+    backendProcess.on("exit", (code) => {
+      console.log(`[Desktop] Backend process exited with code ${code}`);
+      backendProcess = null;
+    });
+
+    // Wait up to 6 seconds for port 3001 to become available
+    const startTime = Date.now();
+    while (Date.now() - startTime < 6000) {
+      await new Promise((r) => setTimeout(r, 400));
+      if (await checkPort(3001)) {
+        console.log("[Desktop] Backend server successfully started and listening on port 3001");
+        return;
+      }
+    }
+    console.warn("[Desktop] Timed out waiting for backend server to listen on port 3001");
+  } catch (err) {
+    console.error("[Desktop] Error launching backend server:", err);
+  }
 }
 
 async function createWindow() {
@@ -207,6 +253,7 @@ function registerIpcHandlers() {
 }
 
 app.whenReady().then(async () => {
+  await ensureBackendServer();
   registerIpcHandlers();
   await createWindow();
 
@@ -229,6 +276,18 @@ app.whenReady().then(async () => {
 app.on("will-quit", () => {
   if (automationBridge) {
     void automationBridge.stop();
+  }
+  if (backendProcess && !backendProcess.killed) {
+    try {
+      if (process.platform === "win32" && backendProcess.pid) {
+        spawn("taskkill", ["/pid", backendProcess.pid.toString(), "/T", "/F"]);
+      } else {
+        backendProcess.kill();
+      }
+    } catch {
+      /* ignore */
+    }
+    backendProcess = null;
   }
 });
 

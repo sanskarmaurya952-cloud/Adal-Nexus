@@ -6,6 +6,7 @@ import type {
   SocialTone,
 } from "../../../../src/server/social/types";
 import { AlertTriangleIcon, PencilIcon, RefreshIcon, SparklesIcon } from "../Icons";
+import { getApiUrl } from "../../api";
 
 interface CaptionEditorProps {
   caption: string;
@@ -77,7 +78,7 @@ export function CaptionEditor({
     };
 
     try {
-      const res = await fetch("/api/social/generate-caption", {
+      const res = await fetch(getApiUrl("/api/social/generate-caption"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(reqBody),

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { ApproveDraftRequest, ApprovedDraftRecord } from "../../../../src/server/social/types";
 import { AlertTriangleIcon, CheckCircleIcon, ShieldIcon, SparklesIcon } from "../Icons";
 import type { SelectedMedia } from "./ImagePicker";
+import { getApiUrl } from "../../api";
 
 interface ApprovalGateProps {
   selectedImage: SelectedMedia | null;
@@ -55,7 +56,7 @@ export function ApprovalGate({
     };
 
     try {
-      const res = await fetch("/api/social/approve-draft", {
+      const res = await fetch(getApiUrl("/api/social/approve-draft"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(reqBody),

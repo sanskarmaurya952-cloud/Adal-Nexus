@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import type { BrowserTab, RunSnapshot } from "../../types/browser";
+import { getApiUrl } from "../../api";
 import { VoiceControl } from "./VoiceControl";
 import {
   AgentIcon,
@@ -156,7 +157,7 @@ export function AIAgentPanel({
     (s: any) => s.tool === "sheet.write" && (s.status === "completed" || (s.output as any)?.fileName)
   );
   const outputFileName = (sheetStep?.output as any)?.fileName || "ai_startups.xlsx";
-  const downloadUrl = `/api/downloads/${encodeURIComponent(outputFileName)}`;
+  const downloadUrl = getApiUrl(`/api/downloads/${encodeURIComponent(outputFileName)}`);
 
   const failedStep = run?.steps?.find((s: any) => s.status === "failed");
 
@@ -234,7 +235,7 @@ export function AIAgentPanel({
     setIsGeneratingCaptions(true);
     setPublishStatusMessage(null);
     try {
-      const res = await fetch("/api/social/generate-multi-captions", {
+      const res = await fetch(getApiUrl("/api/social/generate-multi-captions"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -24,6 +24,7 @@ import { ImagePicker, type SelectedMedia } from "./ImagePicker";
 import { MockPublishModal } from "./MockPublishModal";
 import { MultiPlatformPreview } from "./MultiPlatformPreview";
 import { SocialDemoMode } from "./SocialDemoMode";
+import { getApiUrl } from "../../api";
 
 export function SocialWorkspace() {
   const [workspaceMode, setWorkspaceMode] = useState<"demo" | "live">("demo");
@@ -48,13 +49,13 @@ export function SocialWorkspace() {
     setStatusError(null);
     try {
       // First try platform-status
-      const res = await fetch("/api/social/platform-status");
+      const res = await fetch(getApiUrl("/api/social/platform-status"));
       if (res.ok) {
         const data = await res.json();
         setStatus(data as MultiPlatformIntegrationStatus);
       } else {
         // Fallback to legacy status endpoint
-        const fallbackRes = await fetch("/api/social/status");
+        const fallbackRes = await fetch(getApiUrl("/api/social/status"));
         if (!fallbackRes.ok) throw new Error(`HTTP ${fallbackRes.status}`);
         const fallbackData = await fallbackRes.json();
         setStatus({
@@ -91,7 +92,7 @@ export function SocialWorkspace() {
   const handleConnectLinkedIn = async () => {
     setIsConnectingLinkedIn(true);
     try {
-      const res = await fetch("/api/social/linkedin/auth-url");
+      const res = await fetch(getApiUrl("/api/social/linkedin/auth-url"));
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         throw new Error(errData.error || `HTTP ${res.status}`);
@@ -128,7 +129,7 @@ export function SocialWorkspace() {
   const handleDisconnectLinkedIn = async () => {
     if (!confirm("Are you sure you want to disconnect your LinkedIn account?")) return;
     try {
-      await fetch("/api/social/linkedin/disconnect", { method: "DELETE" });
+      await fetch(getApiUrl("/api/social/linkedin/disconnect"), { method: "DELETE" });
       fetchStatus();
     } catch (err: any) {
       alert(`Failed to disconnect: ${err.message}`);

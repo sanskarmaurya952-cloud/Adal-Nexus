@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { RunEvent, RunSnapshot } from "../../src/server/agent/types";
 import type { Bookmark, BrowserTab, HistoryEntry } from "./types/browser";
 import { resolveAddressBarInput } from "../../src/desktop/urlPolicy";
+import { getApiUrl } from "./api";
 import { BrowserChrome } from "./components/browser/BrowserChrome";
 import { BrowserSidebar, type SidebarTab } from "./components/browser/BrowserSidebar";
 import { BrowserViewport } from "./components/browser/BrowserViewport";
@@ -75,7 +76,8 @@ function toLine(e: RunEvent): LogLine {
 
 async function post(url: string, body?: unknown): Promise<string | null> {
   try {
-    const r = await fetch(url, {
+    const fullUrl = getApiUrl(url);
+    const r = await fetch(fullUrl, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: body === undefined ? undefined : JSON.stringify(body),
@@ -90,7 +92,8 @@ async function post(url: string, body?: unknown): Promise<string | null> {
 
 async function postJson<T>(url: string, body?: unknown): Promise<{ data?: T; error?: string }> {
   try {
-    const r = await fetch(url, {
+    const fullUrl = getApiUrl(url);
+    const r = await fetch(fullUrl, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: body === undefined ? undefined : JSON.stringify(body),
@@ -167,7 +170,7 @@ export function App() {
   }, []);
 
   const hydrate = useCallback(() => {
-    fetch("/api/run")
+    fetch(getApiUrl("/api/run"))
       .then((r) => r.json())
       .then((d: { snapshot: RunSnapshot | null; events: RunEvent[] }) => {
         if (!d.snapshot) return;
@@ -180,12 +183,12 @@ export function App() {
   }, [addLog]);
 
   useEffect(() => {
-    fetch("/api/health")
+    fetch(getApiUrl("/api/health"))
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
       .then(setHealth)
       .catch((e) => setHealthError(String(e.message ?? e)));
 
-    const es = new EventSource("/api/events");
+    const es = new EventSource(getApiUrl("/api/events"));
     es.onopen = () => {
       setConnected(true);
       hydrate();
@@ -209,7 +212,7 @@ export function App() {
   const runStatus = run?.status;
   const currentStepId = run?.currentStepId;
   useEffect(() => {
-    fetch("/api/health")
+    fetch(getApiUrl("/api/health"))
       .then((r) => (r.ok ? r.json() : null))
       .then((h) => h && setHealth(h))
       .catch(() => {});

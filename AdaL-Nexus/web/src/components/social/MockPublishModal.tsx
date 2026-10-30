@@ -7,6 +7,7 @@ import {
   ShieldIcon,
   SparklesIcon,
 } from "../Icons";
+import { getApiUrl } from "../../api";
 
 interface MockPublishModalProps {
   draft: ApprovedDraftRecord;
@@ -34,7 +35,7 @@ export function MockPublishModal({
     const idempotencyKey = `client_pub_${draft.id}_${Date.now()}`;
 
     try {
-      const res = await fetch("/api/social/publish-mock", {
+      const res = await fetch(getApiUrl("/api/social/publish-mock"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
