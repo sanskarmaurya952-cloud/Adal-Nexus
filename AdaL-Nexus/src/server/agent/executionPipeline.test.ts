@@ -73,6 +73,11 @@ function createTestMockDriver(): DesktopBrowserDriver {
     screenshot: async () => ({
       data: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
     }),
+    waitFor: async (opts?: any) => ({
+      waited: true,
+      elapsedMs: 50,
+      condition: opts?.selector || "idle",
+    }),
   } as unknown as DesktopBrowserDriver;
 }
 
@@ -320,5 +325,33 @@ describe("AdaL Nexus Autonomous Agent Execution Engine (Acceptance Matrix A-H)",
     assert.equal(failedStep?.status, "failed");
     assert.ok(failedStep?.reason, "Failed step did not record an actionable failure reason");
     assert.equal(nextStep?.status, "skipped");
+  });
+
+  // --------------------------------------------------------------------------
+  // Test I — WhatsApp Navigation & Friend Messaging Execution
+  // --------------------------------------------------------------------------
+  it("Test I: WhatsApp — 'mera wahtsaap par jao aur maine apne dost ko message karne ko kaha' executes navigation to WhatsApp Web and guides user safely", async () => {
+    let navigatedUrl = "";
+    const driver = createTestMockDriver();
+    driver.navigate = async (url: string) => {
+      navigatedUrl = url;
+      return { url, title: "WhatsApp", tabId: "test_tab_1" };
+    };
+
+    const registry = buildTestRegistry(driver);
+    const controller = new Controller(registry, new PolicyEngine(registry));
+
+    const draft = parseLocalCommand("mera wahtsaap par jao aur maine apne dost ko message karne ko kaha");
+    assert.ok(draft, "Failed to parse WhatsApp user command");
+
+    const run = controller.start(draft.plan);
+    await controller.whenFinished(run.runId);
+
+    const snapshot = controller.current()?.snapshot;
+    assert.equal(snapshot?.status, "completed");
+    assert.equal(navigatedUrl, "https://web.whatsapp.com/");
+    const firstStep = snapshot?.steps[0];
+    assert.equal(firstStep?.status, "completed");
+    assert.equal(firstStep?.tool, "browser.open_url");
   });
 });

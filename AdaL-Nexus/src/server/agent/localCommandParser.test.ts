@@ -160,6 +160,36 @@ describe("Local Command Parser (Hindi, Hinglish & English)", () => {
     assert.equal(page.plan.steps[0].tool, "browser.get_current_page");
   });
 
+  test("parses WhatsApp navigation and friend messaging commands in Hindi & Hinglish", () => {
+    // 1. User's exact prompt: "mera wahtsaap par jao aur maine apne dost ko message karne ko kaha"
+    const userPrompt = parseLocalCommand("mera wahtsaap par jao aur maine apne dost ko message karne ko kaha");
+    assert.ok(userPrompt);
+    assert.equal(userPrompt.plan.steps[0].tool, "browser.open_url");
+    assert.equal((userPrompt.plan.steps[0].input as any).url, "https://web.whatsapp.com");
+    assert.equal(userPrompt.plan.steps[1].tool, "browser.wait");
+    assert.equal(userPrompt.plan.steps[2].tool, "browser.observe");
+    assert.equal(userPrompt.plan.steps[3].tool, "system.note");
+
+    // 2. Simple open WhatsApp: "WhatsApp kholo"
+    const openWa = parseLocalCommand("WhatsApp kholo");
+    assert.ok(openWa);
+    assert.equal(openWa.plan.steps[0].tool, "browser.open_url");
+    assert.equal((openWa.plan.steps[0].input as any).url, "https://web.whatsapp.com");
+
+    // 3. Targeted WhatsApp friend message: "WhatsApp par Rahul ko Hello bhejo"
+    const targetMsg = parseLocalCommand("WhatsApp par Rahul ko Hello bhejo");
+    assert.ok(targetMsg);
+    assert.equal(targetMsg.plan.steps.length, 6);
+    assert.equal(targetMsg.plan.steps[0].tool, "browser.open_url");
+    assert.equal((targetMsg.plan.steps[0].input as any).url, "https://web.whatsapp.com");
+    assert.equal(targetMsg.plan.steps[2].tool, "browser.type");
+    assert.equal((targetMsg.plan.steps[2].input as any).text, "Rahul");
+    assert.equal(targetMsg.plan.steps[4].tool, "browser.type");
+    assert.equal((targetMsg.plan.steps[4].input as any).text, "Hello");
+    assert.equal(targetMsg.plan.steps[5].tool, "browser.click");
+    assert.equal(targetMsg.approvalStepIds.includes("step_6"), true);
+  });
+
   test("returns null for unrecognized non-command input", () => {
     const unrec = parseLocalCommand("asdfghjk qwerty 12345");
     assert.equal(unrec, null);

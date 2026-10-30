@@ -66,6 +66,18 @@ describe("URL Policy & Address Bar Resolution", () => {
     assert.equal(res2.url, "https://duckduckgo.com/");
   });
 
+  it("resolves whatsapp keyword shortcuts to WhatsApp Web homepage", () => {
+    const res1 = resolveAddressBarInput("whatsapp");
+    assert.equal(res1.isValid, true);
+    assert.equal(res1.isSearch, false);
+    assert.equal(res1.url, "https://web.whatsapp.com/");
+
+    const res2 = resolveAddressBarInput("wahtsaap");
+    assert.equal(res2.isValid, true);
+    assert.equal(res2.isSearch, false);
+    assert.equal(res2.url, "https://web.whatsapp.com/");
+  });
+
   it("resolves explicit ddg and duckduckgo search prefixes", () => {
     const res1 = resolveAddressBarInput("ddg python async tutorial");
     assert.equal(res1.isValid, true);

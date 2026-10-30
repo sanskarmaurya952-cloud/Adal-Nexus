@@ -66,6 +66,20 @@ export function resolveAddressBarInput(
     };
   }
 
+  if (
+    lower === "whatsapp" ||
+    lower === "wahtsaap" ||
+    lower === "whatsap" ||
+    lower === "watsapp" ||
+    lower === "wahtsapp"
+  ) {
+    return {
+      url: "https://web.whatsapp.com/",
+      isSearch: false,
+      isValid: true,
+    };
+  }
+
   if (lower === "duckduckgo" || lower === "ddg") {
     return {
       url: "https://duckduckgo.com/",

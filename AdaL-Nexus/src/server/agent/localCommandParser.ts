@@ -11,6 +11,12 @@ interface ParsedCommand {
 }
 
 const COMMON_SITES: Record<string, string> = {
+  whatsapp: "https://web.whatsapp.com",
+  wahtsaap: "https://web.whatsapp.com",
+  whatsap: "https://web.whatsapp.com",
+  watsapp: "https://web.whatsapp.com",
+  wahtsapp: "https://web.whatsapp.com",
+  whatapp: "https://web.whatsapp.com",
   youtube: "https://www.youtube.com",
   flipkart: "https://www.flipkart.com",
   google: "https://www.google.com",
@@ -93,9 +99,10 @@ function parseSingleIntent(rawPhrase: string): ParsedCommand | null {
     // Check if target website is mentioned with the new tab
     for (const [siteKey, siteUrl] of Object.entries(COMMON_SITES)) {
       if (siteKey.length > 1 && new RegExp(`\\b${siteKey}\\b`, "i").test(text)) {
+        const displayKey = siteKey.includes("what") || siteKey.includes("waht") ? "WHATSAPP" : siteKey.toUpperCase();
         return {
           tool: "browser.new_tab",
-          title: `Open new tab with ${siteKey.toUpperCase()}`,
+          title: `Open new tab with ${displayKey}`,
           input: { url: siteUrl },
         };
       }
@@ -236,9 +243,10 @@ function parseSingleIntent(rawPhrase: string): ParsedCommand | null {
     if (siteRegex.test(text)) {
       const isJustSite = siteKey.length > 1 && (text === siteKey || text === `${siteKey}.com`);
       if (hasOpenVerb || isJustSite) {
+        const displayKey = siteKey.includes("what") || siteKey.includes("waht") ? "WHATSAPP" : siteKey.toUpperCase();
         return {
           tool: "browser.open_url",
-          title: `Open ${siteKey.toUpperCase()} (${siteUrl})`,
+          title: `Open ${displayKey} (${siteUrl})`,
           input: { url: siteUrl },
         };
       }
@@ -571,7 +579,174 @@ export function parseLocalCommand(rawTask: string): PlanDraft | null {
   }
 
   // =========================================================================
-  // 5. Clause splitting for multi-step browser & navigation requests
+  // 5. WhatsApp Messaging & Navigation Intent
+  // =========================================================================
+  const isWhatsAppTask = /\b(whatsapp|wahtsaap|whatsap|watsapp|wahtsapp|whatapp)\b/i.test(cleaned);
+  const hasMessagingWord = /\b(message|msg|sandesh|bhejo|send|kaha|kaho|likho|chat|text|batana|batao)\b/i.test(cleaned);
+  const hasFriendWord = /\b(dost|friend|bhai|yaar|mitra)\b/i.test(cleaned);
+
+  if (isWhatsAppTask && (hasMessagingWord || hasFriendWord)) {
+    let contact = "";
+    let messageText = "";
+
+    // 1. Quoted message check
+    const quoteMatch = trimmed.match(/["'“]([^"'”]+)["'”]/);
+    if (quoteMatch) {
+      messageText = quoteMatch[1].trim();
+    }
+
+    // 2. Parse "ko" relationship
+    if (cleaned.includes(" ko ")) {
+      const parts = cleaned.split(" ko ");
+      const beforeKo = parts[0].trim();
+      const afterKo = parts.slice(1).join(" ko ").trim();
+
+      const candidateName = beforeKo
+        .replace(/\b(whatsapp|wahtsaap|whatsap|watsapp|wahtsapp|whatapp)\b/gi, "")
+        .replace(/\b(par|pe|mein|in|on|se)\b/gi, "")
+        .replace(/\b(mera|meri|apne|mere|hamare|my|maine)\b/gi, "")
+        .replace(/\b(jao|kholo|open|visit|aur|and)\b/gi, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      if (candidateName) {
+        const words = candidateName.split(" ");
+        const rawName = words[words.length - 1];
+        contact = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+      }
+
+      if (!messageText) {
+        const candidateMsg = afterKo
+          .replace(/\b(message|msg|sandesh|text)\b/gi, "")
+          .replace(/\b(bhejo|bhej|send|karo|kar|do|kaha|kaho|likho|likh|karne)\b/gi, "")
+          .replace(/\b(ki|hai|ke|liye|ko|toh|woh|nhi|raha)\b/gi, "")
+          .replace(/\s+/g, " ")
+          .trim();
+        if (candidateMsg.length > 0 && !["dost", "friend", "whatsapp", "wahtsaap"].includes(candidateMsg)) {
+          const matchCase = trimmed.match(new RegExp(`\\b${candidateMsg}\\b`, "i"));
+          messageText = matchCase ? matchCase[0] : (candidateMsg.charAt(0).toUpperCase() + candidateMsg.slice(1));
+        }
+      }
+    } else {
+      const friendMatch = cleaned.match(/\b(dost|friend|bhai|yaar|mitra)\b/i);
+      if (friendMatch) contact = friendMatch[1];
+    }
+
+    const planId = randomUUID();
+
+    if (contact && contact !== "dost" && contact !== "friend" && messageText) {
+      // Targeted message plan with pre-filled contact and message
+      const plan: Plan = {
+        goal: `Open WhatsApp Web and send message to ${contact}: "${messageText}"`,
+        steps: [
+          {
+            id: "step_1",
+            title: "Open WhatsApp Web (https://web.whatsapp.com)",
+            tool: "browser.open_url",
+            input: { url: "https://web.whatsapp.com" },
+          },
+          {
+            id: "step_2",
+            title: "Wait for WhatsApp Web interface to load",
+            tool: "browser.wait",
+            input: { selector: "body, #app, canvas, div[contenteditable='true']", timeoutMs: 5000 },
+          },
+          {
+            id: "step_3",
+            title: `Search for contact "${contact}" in WhatsApp`,
+            tool: "browser.type",
+            input: {
+              selector: "div[contenteditable='true'][data-tab='3'], [data-testid='chat-list-search'], input",
+              text: contact,
+              pressEnter: true,
+            },
+          },
+          {
+            id: "step_4",
+            title: "Wait for conversation chat to load",
+            tool: "browser.wait",
+            input: { timeoutMs: 2500 },
+          },
+          {
+            id: "step_5",
+            title: `Type message "${messageText}" in chat box`,
+            tool: "browser.type",
+            input: {
+              selector: "footer div[contenteditable='true'], div[contenteditable='true'][data-tab='10']",
+              text: messageText,
+            },
+          },
+          {
+            id: "step_6",
+            title: `Send WhatsApp message to ${contact} (requires user approval)`,
+            tool: "browser.click",
+            input: {
+              selector: "button[data-testid='compose-btn-send'], span[data-icon='send']",
+              isFormSubmit: true,
+              description: `Send WhatsApp message to ${contact}: "${messageText}"`,
+            },
+          },
+        ],
+      };
+      return {
+        planId,
+        task: trimmed,
+        plan,
+        limitations: [],
+        approvalStepIds: ["step_6"],
+        provider: "local-intent-engine",
+        model: "desktop-command-parser",
+        createdAt: new Date().toISOString(),
+      };
+    } else {
+      // Open WhatsApp Web and guide user on chat / QR login (e.g. user prompt: "mera wahtsaap par jao aur maine apne dost ko message karne ko kaha")
+      const contactLabel = contact ? (contact === "dost" ? "apne dost" : contact) : "apne dost";
+      const plan: Plan = {
+        goal: `Open WhatsApp Web in desktop browser to message ${contactLabel}`,
+        steps: [
+          {
+            id: "step_1",
+            title: "Open WhatsApp Web (https://web.whatsapp.com)",
+            tool: "browser.open_url",
+            input: { url: "https://web.whatsapp.com" },
+          },
+          {
+            id: "step_2",
+            title: "Wait for WhatsApp Web interface to load",
+            tool: "browser.wait",
+            input: { selector: "body, #app, canvas, div[contenteditable='true']", timeoutMs: 5000 },
+          },
+          {
+            id: "step_3",
+            title: "Observe WhatsApp Web connection & chat status",
+            tool: "browser.observe",
+            input: {},
+          },
+          {
+            id: "step_4",
+            title: "Guide user on WhatsApp Web authentication & chat selection",
+            tool: "system.note",
+            input: {
+              text: "WhatsApp Web desktop browser me open kar diya gaya hai. Agar aapka WhatsApp phone se link nahi hai, toh phone me WhatsApp kholkar Linked Devices se QR code scan karein. Iske baad chat par click karein ya agle prompt me naam aur message batayein (e.g. 'WhatsApp par Rahul ko Hello bhejo').",
+            },
+          },
+        ],
+      };
+      return {
+        planId,
+        task: trimmed,
+        plan,
+        limitations: [],
+        approvalStepIds: [],
+        provider: "local-intent-engine",
+        model: "desktop-command-parser",
+        createdAt: new Date().toISOString(),
+      };
+    }
+  }
+
+  // =========================================================================
+  // 6. Clause splitting for multi-step browser & navigation requests
   // =========================================================================
   const clauses = trimmed
     .split(/\s*(?:\baur\b|\band\b|\bthen\b|\bfir\b|\bphir\b|;|,(?!\w))\s*/i)
