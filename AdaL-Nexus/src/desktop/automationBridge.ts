@@ -155,7 +155,13 @@ export class AutomationBridge {
   constructor(options: AutomationBridgeOptions) {
     this.tabManager = options.tabManager;
     this.secretToken = crypto.randomBytes(16).toString("hex");
-    this.bridgeFilePath = options.bridgeFilePath || path.resolve(process.cwd(), ".desktop-bridge.json");
+    let defaultBridgePath = path.resolve(process.cwd(), ".desktop-bridge.json");
+    try {
+      const userDir = path.join(os.homedir(), ".adal-nexus");
+      if (!fs.existsSync(userDir)) fs.mkdirSync(userDir, { recursive: true });
+      defaultBridgePath = path.join(userDir, "desktop-bridge.json");
+    } catch {}
+    this.bridgeFilePath = options.bridgeFilePath || defaultBridgePath;
     if (options.port) this.port = options.port;
   }
 

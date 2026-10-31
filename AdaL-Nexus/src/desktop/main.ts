@@ -20,7 +20,7 @@ let backendProcess: ChildProcess | null = null;
 async function checkPort(port: number): Promise<boolean> {
   return new Promise((resolve) => {
     import("node:http").then(({ default: http }) => {
-      const req = http.get(`http://localhost:${port}/`, () => {
+      const req = http.get(`http://127.0.0.1:${port}/`, () => {
         resolve(true);
       });
       req.on("error", () => resolve(false));
@@ -122,11 +122,12 @@ async function createWindow() {
     minWidth: 900,
     minHeight: 600,
     title: "AdaL-Nexus",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#060714",
+    show: false,
     titleBarStyle: "hidden",
     titleBarOverlay: {
-      color: "#f8f8fc",
-      symbolColor: "#475569",
+      color: "#0d1424",
+      symbolColor: "#94a3b8",
       height: 44,
     },
     webPreferences: {
@@ -137,6 +138,31 @@ async function createWindow() {
       nodeIntegration: false,
       sandbox: true,
     },
+  });
+
+  mainWindow.once("ready-to-show", () => {
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.show();
+    }
+  });
+
+  // Safety fallback: reveal window after 2000ms if ready-to-show is delayed
+  setTimeout(() => {
+    if (mainWindow && !mainWindow.isDestroyed() && !mainWindow.isVisible()) {
+      mainWindow.show();
+    }
+  }, 2000);
+
+  mainWindow.webContents.on("console-message", (_event, level, message, line, sourceId) => {
+    console.log(`[Renderer Console] [level ${level}] ${message} (${sourceId}:${line})`);
+  });
+
+  mainWindow.webContents.on("did-fail-load", (_event, errorCode, errorDescription, validatedURL) => {
+    console.error(`[Renderer FailLoad] ${errorCode}: ${errorDescription} on ${validatedURL}`);
+  });
+
+  mainWindow.webContents.on("render-process-gone", (_event, details) => {
+    console.error(`[Renderer Process Gone] reason: ${details.reason}, exitCode: ${details.exitCode}`);
   });
 
   storage = new BrowserStorage();
@@ -173,12 +199,11 @@ async function createWindow() {
   tabManager.createTab("adal://home");
 
   // Determine whether to connect to Vite dev server or load production build
-  const isDevPortActive = await checkPort(5173);
-  if (isDevPortActive) {
-    console.log("[Desktop] Connecting to Vite dev server at http://localhost:5173");
-    await mainWindow.loadURL("http://localhost:5173");
+  if (!app.isPackaged && (await checkPort(5173))) {
+    console.log("[Desktop] Connecting to Vite dev server at http://127.0.0.1:5173");
+    await mainWindow.loadURL("http://127.0.0.1:5173");
   } else {
-    const prodHtml = path.resolve(__dirname, "..", "web", "dist", "index.html");
+    const prodHtml = path.join(app.getAppPath(), "web", "dist", "index.html");
     console.log("[Desktop] Loading packaged UI from", prodHtml);
     await mainWindow.loadFile(prodHtml);
   }
@@ -275,9 +300,9 @@ function registerIpcHandlers() {
 }
 
 app.whenReady().then(async () => {
-  await ensureBackendServer();
   registerIpcHandlers();
   await createWindow();
+  void ensureBackendServer();
 
   if (tabManager) {
     automationBridge = new AutomationBridge({ tabManager });

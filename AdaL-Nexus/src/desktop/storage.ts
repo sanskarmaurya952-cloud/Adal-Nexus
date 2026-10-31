@@ -1,7 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import os from "node:os";
 import crypto from "node:crypto";
+import { createRequire } from "node:module";
 import type { Bookmark, HistoryEntry } from "./types.js";
+
+const cjsRequire = createRequire(import.meta.url);
 
 export class BrowserStorage {
   private readonly storageDir: string;
@@ -12,13 +16,20 @@ export class BrowserStorage {
     if (customStorageDir) {
       this.storageDir = customStorageDir;
     } else {
-      // In Electron main process, require('electron').app.getPath("userData")
+      let resolvedDir: string | null = null;
       try {
-        const { app } = require("electron");
-        this.storageDir = path.join(app.getPath("userData"), "browser-data");
-      } catch {
-        this.storageDir = path.resolve(process.cwd(), "data", "browser");
+        if (process.versions?.electron) {
+          const electron = cjsRequire("electron");
+          if (electron?.app?.getPath) {
+            resolvedDir = path.join(electron.app.getPath("userData"), "browser-data");
+          }
+        }
+      } catch {}
+
+      if (!resolvedDir) {
+        resolvedDir = path.join(os.homedir(), ".adal-nexus", "browser-data");
       }
+      this.storageDir = resolvedDir;
     }
 
     this.bookmarksFile = path.join(this.storageDir, "bookmarks.json");
@@ -27,8 +38,12 @@ export class BrowserStorage {
   }
 
   private ensureDirectory(): void {
-    if (!fs.existsSync(this.storageDir)) {
-      fs.mkdirSync(this.storageDir, { recursive: true });
+    try {
+      if (!fs.existsSync(this.storageDir)) {
+        fs.mkdirSync(this.storageDir, { recursive: true });
+      }
+    } catch (err) {
+      console.warn(`[BrowserStorage] Error creating storage directory: ${this.storageDir}`, err);
     }
   }
 

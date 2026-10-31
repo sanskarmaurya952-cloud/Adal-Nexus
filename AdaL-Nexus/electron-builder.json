@@ -34,10 +34,13 @@
   "nsis": {
     "artifactName": "${productName}-Setup-${version}.${ext}",
     "oneClick": false,
+    "perMachine": false,
+    "allowElevation": false,
     "allowToChangeInstallationDirectory": true,
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "AdaL-Nexus Browser"
+    "shortcutName": "AdaL-Nexus Browser",
+    "uninstallDisplayName": "AdaL-Nexus Browser"
   },
   "portable": {
     "artifactName": "${productName}-Portable.${ext}"
