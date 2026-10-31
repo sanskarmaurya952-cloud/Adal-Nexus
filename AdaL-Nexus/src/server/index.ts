@@ -42,9 +42,11 @@ const server = app.listen(config.port, () => {
   emit("system", "server started");
 });
 
-function shutdown() {
+export function shutdown() {
   server.close();
   void browser.close().finally(() => process.exit(0));
 }
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
+
+export { server, app, controller, registry };

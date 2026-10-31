@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+  "appId": "com.adalnexus.browser",
+  "productName": "AdaL-Nexus",
+  "copyright": "Copyright © 2026 AdaL-Nexus",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist-electron/**/*",
+    "web/dist/**/*",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": ".env",
+      "to": ".env",
+      "filter": ["**/*"]
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "artifactName": "${productName}-${version}-${arch}.${ext}"
+  },
+  "nsis": {
+    "artifactName": "${productName}-Setup-${version}.${ext}",
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "AdaL-Nexus Browser"
+  },
+  "portable": {
+    "artifactName": "${productName}-Portable.${ext}"
+  },
+  "asar": true,
+  "asarUnpack": [
+    "**/*.node"
+  ]
+}

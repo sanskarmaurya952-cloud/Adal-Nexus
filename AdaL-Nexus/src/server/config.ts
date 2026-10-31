@@ -1,8 +1,20 @@
 import { existsSync } from "node:fs";
+import path from "node:path";
 
-// Load .env if present (Node built-in; no dotenv dependency). Never log values.
-if (existsSync(".env")) {
-  process.loadEnvFile(".env");
+// Load .env if present from project root, resources path, or next to executable. Never log values.
+const candidateEnvPaths = [
+  path.resolve(".env"),
+  (process as any).resourcesPath ? path.join((process as any).resourcesPath, ".env") : "",
+  process.execPath ? path.join(path.dirname(process.execPath), ".env") : "",
+].filter(Boolean);
+
+for (const p of candidateEnvPaths) {
+  if (existsSync(p)) {
+    try {
+      process.loadEnvFile(p);
+      break;
+    } catch {}
+  }
 }
 
 export const config = {

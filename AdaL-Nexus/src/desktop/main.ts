@@ -39,11 +39,33 @@ async function ensureBackendServer(): Promise<void> {
     return;
   }
 
+  // 1. Packaged / Production mode: load pre-bundled server.js
+  const bundledServer = path.join(__dirname, "server.js");
+  if (fs.existsSync(bundledServer)) {
+    console.log("[Desktop] Starting pre-bundled backend server on port 3001...");
+    try {
+      const { pathToFileURL } = await import("node:url");
+      await import(pathToFileURL(bundledServer).href);
+
+      const startTime = Date.now();
+      while (Date.now() - startTime < 6000) {
+        await new Promise((r) => setTimeout(r, 200));
+        if (await checkPort(3001)) {
+          console.log("[Desktop] Bundled backend server listening on port 3001");
+          return;
+        }
+      }
+    } catch (err) {
+      console.error("[Desktop] Error importing bundled server:", err);
+    }
+  }
+
+  // 2. Development mode fallback: spawn via tsx
   const projectRoot = path.resolve(__dirname, "..");
   const isWindows = process.platform === "win32";
   const cmd = isWindows ? "npx.cmd" : "npx";
 
-  console.log("[Desktop] Auto-starting backend server on port 3001...");
+  console.log("[Desktop] Auto-starting backend server via tsx on port 3001...");
   try {
     backendProcess = spawn(cmd, ["tsx", "src/server/index.ts"], {
       cwd: projectRoot,
