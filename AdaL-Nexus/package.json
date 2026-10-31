@@ -26,6 +26,9 @@
     "planner:check": "tsx src/server/planner/check-live.ts"
   },
   "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
     "@google/genai": "^2.31.0",
     "exceljs": "^4.4.0",
     "express": "^4.21.2",

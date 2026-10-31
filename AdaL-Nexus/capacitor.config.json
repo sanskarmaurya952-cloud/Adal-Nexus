@@ -1,0 +1,8 @@
+{
+  "appId": "com.adalnexus.app",
+  "appName": "AdaL Nexus",
+  "webDir": "web/dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
